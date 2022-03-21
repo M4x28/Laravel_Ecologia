@@ -1,0 +1,19 @@
+{
+    "The :attribute must contain at least one letter.": "L':attribute deve contenere almeno una lettera.",
+    "The :attribute must contain at least one number.": "L':attribute deve contenere almeno un numero.",
+    "The :attribute must contain at least one symbol.": "L':attribute deve contenere almeno un simbolo.",
+    "The :attribute must contain at least one uppercase and one lowercase letter.": "L':attribute deve contenere almeno una lettera maiuscola e una minuscola.",
+    "The given :attribute has appeared in a data leak. Please choose a different :attribute.": "l':attribute dato è apparso in una fuga di dati. Si prega di scegliere un altro :attribute.",
+    "Search for waste": "Cerca Rifiuto",
+    "Search": "Cerca",
+    "Sorry we did not find any results": "Spiacenti non abbiamo trovato alcun risultato",
+    "Login": "Accedi",
+    "Register": "Registrati",
+    "Cities": "Città",
+    "Protect nature": "Proteggi la natura",
+    "...Do it for the good of all": "...Fallo per il bene di tutti",
+    "": "",
+    "": "",
+    "": "",
+    "": ""
+}
