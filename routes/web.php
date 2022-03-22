@@ -47,3 +47,5 @@ Route::post('/getRifiuti', function () {
     $rifiuti = DB::table('RIFIUTI')->get();
     return response()->json($rifiuti);
 })->name('getRifiuti');
+
+// test
