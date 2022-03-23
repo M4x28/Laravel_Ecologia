@@ -1,12 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\SmistamentoControlle;
 use App\Http\Controllers\RifiutiController;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use App\Http\Controllers\getRifiuti;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +42,12 @@ Route::post('index', [RifiutiController::class, 'getCestino'])->name('index.getC
 //Route::resource('index', RifiutiController::class);
 
 //Ajax
+/*
 Route::post('/getRifiuti', function () {
+    
     $rifiuti = DB::table('RIFIUTI')->get();
     return response()->json($rifiuti);
 })->name('getRifiuti');
+*/
+
+Route::post('/getRifiuti', [getRifiuti::class, 'getRifiuti'])->name('getRifiuti');
