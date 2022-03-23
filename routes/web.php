@@ -49,5 +49,5 @@ Route::post('/getRifiuti', function () {
     return response()->json($rifiuti);
 })->name('getRifiuti');
 */
-
+// ELOQUENT 
 Route::post('/getRifiuti', [getRifiuti::class, 'getRifiuti'])->name('getRifiuti');
