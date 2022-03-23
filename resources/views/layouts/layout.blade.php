@@ -68,7 +68,10 @@
 
                 <div class="d-flex align-items-center">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a id="navbarDropdown" class="nav-link" href="{{ route('home') }}" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
+                        </a>
                     @else
                         <a href="{{ route('login') }}" class="btn btn-link px-3 me-2">{{ __('Login') }}</a>
 
