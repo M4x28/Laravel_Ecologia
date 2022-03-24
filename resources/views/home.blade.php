@@ -316,6 +316,9 @@
 
                 $("#lon").val(coordinates[0]);
                 $("#lat").val(coordinates[1]);
+                $("#lon").attr("value", coordinates[0]);
+                ù$("#lat").attr("value", coordinates[1]);
+
                 //$("#paeseStruttura").val(event.result.context[1].text);
                 $("#indirizzoStruttura").val(event.result.place_name);
             });
