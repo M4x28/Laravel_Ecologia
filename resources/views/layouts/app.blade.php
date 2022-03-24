@@ -19,6 +19,13 @@
     <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/personal.css?v=') . time() }}" rel="stylesheet">
 
+    <!-- MapBox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+
 </head>
 
 <body @yield('body')>
@@ -91,7 +98,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                             document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -147,6 +154,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Scripts -->
     <script src="{{ asset('js/mdb.min.js') }}"></script>
+
+    @yield('scripts')
 </body>
 
 </html>
