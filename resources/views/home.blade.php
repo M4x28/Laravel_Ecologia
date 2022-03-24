@@ -40,7 +40,32 @@
                                 Tab 1 content
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-                                Tab 2 content
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <!-- Name input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="form4Example1" class="form-control" />
+                                                <label class="form-label" for="form4Example1">Nome</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <!-- Email input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="form4Example2" class="form-control" />
+                                                <label class="form-label" for="form4Example2">Email address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-md-6">
+                                            <!-- Submit button -->
+                                            <button type="submit"
+                                                class="btn btn-primary bg-gradient btn-block btn-lg mb-4">Send</button>
+                                        </div>
+                                    </div>
+
+                                </form>
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
                                 Tab 3 content
