@@ -376,5 +376,54 @@
                 $("#indirizzoStruttura").attr("value", event.result.place_name);
             });
         });
+
+        $(document).ready(function() {
+            $.ajax({
+                url: "{{ route('getRifiuti') }}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                success: function(response) {
+                    var len = response.length;
+                    //console.log(response);
+                    $("#listaCCR").empty();
+                    for (var i = 0; i < len; i++) {
+                        $("#listaCCR").append("<option value='" + response[i]['id'] + "'>" +
+                            response[i]['nome'] + "</option>");
+                    }
+                },
+                error: function(xhr, textStatus, error) {
+                    console.log(xhr.responseText);
+                    console.log(xhr.statusText);
+                    console.log(textStatus);
+                    console.log(error);
+                }
+            });
+            $.ajax({
+                url: "{{ route('getRifiuti') }}",
+                type: "POST",
+                data: {
+                    "_token": "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                success: function(response) {
+                    var len = response.length;
+                    //console.log(response);
+                    $("#listaComuni").empty();
+                    for (var i = 0; i < len; i++) {
+                        $("#listaComuni").append("<option value='" + response[i]['id'] + "'>" +
+                            response[i]['comune'] + "</option>");
+                    }
+                },
+                error: function(xhr, textStatus, error) {
+                    console.log(xhr.responseText);
+                    console.log(xhr.statusText);
+                    console.log(textStatus);
+                    console.log(error);
+                }
+            });
+        });
     </script>
 @endsection

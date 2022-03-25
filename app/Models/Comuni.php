@@ -9,6 +9,14 @@ class Comuni extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'COMUNI_UFF';
+
+
     protected $fillable = [
         'istat',
         'comune',
