@@ -219,8 +219,13 @@
 
                                 </form>
                             </div>
-                            <div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-                                Tab 3 content
+                            <div class="tab-pane fade d-flex justify-content-center" id="ex3-pills-3" role="tabpanel"
+                                aria-labelledby="ex3-tab-3">
+                                <div class="col-md-4 m-4">
+                                    <label for="formFileLg" class="form-label text-black">Upload Calendar</label>
+                                    <input class="form-control form-control-lg btn btn-warning" id="formFileLg" type="file"
+                                        name='UPCalendar' />
+                                </div>
                             </div>
                         </div>
                         <!-- Pills content -->
