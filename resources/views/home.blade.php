@@ -256,6 +256,8 @@
 
                 $("#lon").val(coordinates['lng']);
                 $("#lat").val(coordinates['lat']);
+                $("#lon").attr("value", coordinates[0]);
+                $("#lat").attr("value", coordinates[1]);
             });
         });
 
@@ -305,22 +307,17 @@
                     .addTo(map);
 
                 // Set variable
-                console.log(coordinates[0]);
-                console.log(coordinates[1]);
-                /*
-                    let lon = document.getElementById('lon');
-                    let lat = document.getElementById('lat');
-                    lon.value = coordinates[0];
-                    lat.value = coordinates[1];
-                */
+                //console.log(coordinates[0]);
+                //console.log(coordinates[1]);
 
                 $("#lon").val(coordinates[0]);
                 $("#lat").val(coordinates[1]);
                 $("#lon").attr("value", coordinates[0]);
-                ù$("#lat").attr("value", coordinates[1]);
+                $("#lat").attr("value", coordinates[1]);
 
                 //$("#paeseStruttura").val(event.result.context[1].text);
                 $("#indirizzoStruttura").val(event.result.place_name);
+                $("#indirizzoStruttura").attr("value", event.result.place_name);
             });
         });
     </script>
