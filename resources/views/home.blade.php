@@ -38,6 +38,8 @@
                             <div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel"
                                 aria-labelledby="ex3-tab-1">
                                 <form action="" method="POST">
+                                    @csrf
+
                                     <div class="container mt-4">
                                         <div class="row">
                                             <div class="col-md-6">
@@ -263,13 +265,18 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-4 m-4">
-                                        <label for="formFileLg" class="form-label text-black">Upload Calendar</label>
-                                        <input class="form-control form-control-lg btn btn-warning bg-gradient"
-                                            id="formFileLg" type="file" name='UPCalendar' />
+                                <form action="" method="post">
+                                    @csrf
+
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-md-4 m-4">
+                                            <label for="formFileLg"
+                                                class="form-label text-black">{{ __('Upload Calendar') }}</label>
+                                            <input class="form-control form-control-lg btn btn-warning bg-gradient"
+                                                id="formFileLg" type="file" name='UPCalendar' />
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <!-- Pills content -->
