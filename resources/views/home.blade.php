@@ -37,7 +37,46 @@
                         <div class="tab-content" id="ex2-content">
                             <div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel"
                                 aria-labelledby="ex3-tab-1">
-                                Tab 1 content
+                                <form action="" method="POST">
+                                    <div class="container mt-4">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-outline">
+                                                    <input type="text" class="form-control form-control-lg"
+                                                        list="listaComuni" name="ComuneSelezionato" id="inputComune">
+                                                    <datalist id="listaComuni"></datalist>
+                                                    <label class="form-label"
+                                                        for="inputComune">{{ __('City') }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form12" class="form-control form-control-lg"
+                                                        name='IndirizzoPaese' />
+                                                    <label class="form-label" for="form12">Indirizzo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex justify-content-center m-4">
+                                            <div class="col-md-6">
+                                                <div class="form-outline">
+                                                    <input type="text" class="form-control form-control-lg" list="listaCCR"
+                                                        name="ComuneSelezionato" id="inputCCR">
+                                                    <datalist id="listaCCR"></datalist>
+                                                    <label class="form-label" for="inputCCR">{{ __('CCR') }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-center">
+                                            <div class="col-md-6">
+                                                <!-- Submit button -->
+                                                <button type="submit"
+                                                    class="btn btn-primary bg-gradient btn-block btn-lg">{{ __('Send') }}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
                                 <form action="" method="POST">
@@ -161,13 +200,15 @@
                                             <div class="col-md-2 text-center">Venerdì</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='Apertura' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -177,13 +218,15 @@
                                             <div class="col-md-2 text-center">Sabato</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='Apertura' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -213,18 +256,19 @@
                                         <div class="col-md-6">
                                             <!-- Submit button -->
                                             <button type="submit"
-                                                class="btn btn-primary bg-gradient btn-block btn-lg mb-4">Send</button>
+                                                class="btn btn-primary bg-gradient btn-block btn-lg mb-4">{{ __('Send') }}</button>
                                         </div>
                                     </div>
 
                                 </form>
                             </div>
-                            <div class="tab-pane fade d-flex justify-content-center" id="ex3-pills-3" role="tabpanel"
-                                aria-labelledby="ex3-tab-3">
-                                <div class="col-md-4 m-4">
-                                    <label for="formFileLg" class="form-label text-black">Upload Calendar</label>
-                                    <input class="form-control form-control-lg btn btn-warning" id="formFileLg" type="file"
-                                        name='UPCalendar' />
+                            <div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-4 m-4">
+                                        <label for="formFileLg" class="form-label text-black">Upload Calendar</label>
+                                        <input class="form-control form-control-lg btn btn-warning bg-gradient"
+                                            id="formFileLg" type="file" name='UPCalendar' />
+                                    </div>
                                 </div>
                             </div>
                         </div>
