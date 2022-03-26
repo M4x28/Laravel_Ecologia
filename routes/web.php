@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Ajax;
+use app\Models\Comuni_aderenti;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,14 +31,25 @@ Route::get('lang/{locale}', function ($locale = 'en') {
         app()->setLocale($locale);
     }
 
+    $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
+        ->distinct()
+        ->get(['COMUNI_UFF.comune']);
     //return view('index')->with('smistamento', null);
-    return View::make('index', ['smistamento' => null]);
+    return View::make('index', [
+        'smistamento' => null,
+        'comuni_aderenti' => $comuni
+    ]);
 });
 
 
 // ------------------ **** ---------------------
 Route::get('/', [RifiutiController::class, 'index'])->name('index');
 Route::post('index', [RifiutiController::class, 'getCestino'])->name('index.getCestino');
+
+Route::get('comune/{val}', function ($val) {
+    return $val;
+});
+
 
 //Route::resource('index', RifiutiController::class);
 

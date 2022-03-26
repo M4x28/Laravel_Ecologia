@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Rifiuti;
+use App\Models\Comuni_aderenti;
 use Illuminate\Support\Facades\DB;
 
 
@@ -12,7 +13,15 @@ class RifiutiController extends Controller
     public function index()
     {
         // Load index view
-        return view('index', ['smistamento' => null]);
+
+        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
+            ->distinct()
+            ->get(['COMUNI_UFF.comune']);
+
+        return view('index', [
+            'smistamento' => null,
+            'comuni_aderenti' => $comuni
+        ]);
     }
 
 
@@ -33,15 +42,14 @@ class RifiutiController extends Controller
             ->where('RIFIUTI.nome', $rifiutoSelezionato)
             ->get();
 
-        if(count($smistamento) > 0){
+        if (count($smistamento) > 0) {
             return view('index', [
                 'smistamento' => $smistamento
             ]);
-        } else{
+        } else {
             return view('index', [
                 'smistamento' => 'vuoto'
             ]);
         }
-
     }
 }

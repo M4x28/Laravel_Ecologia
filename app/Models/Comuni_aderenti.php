@@ -9,6 +9,13 @@ class Comuni_aderenti extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'COMUNI_ADERENTI';
+
     protected $fillable = [
         'id',
         'indirizzo',

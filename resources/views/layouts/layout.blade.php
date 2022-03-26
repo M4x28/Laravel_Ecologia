@@ -55,12 +55,14 @@
                         </a>
                         <!-- Dropdown menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item" href="#">Action</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Another action</a>
-                            </li>
+                            @foreach ($comuni_aderenti as $comune)
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('comune/' . $comune->comune) }}">
+                                        {{ $comune->comune }}
+                                    </a>
+                                </li>
+                            @endforeach
+
                         </ul>
                     </li>
                 </ul>
