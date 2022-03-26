@@ -5,7 +5,7 @@ use App\Http\Controllers\RifiutiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
-use App\Http\Controllers\getRifiuti;
+use App\Http\Controllers\Ajax;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +41,7 @@ Route::post('index', [RifiutiController::class, 'getCestino'])->name('index.getC
 
 //Route::resource('index', RifiutiController::class);
 
-//Ajax
-/*
-Route::post('/getRifiuti', function () {
-    
-    $rifiuti = DB::table('RIFIUTI')->get();
-    return response()->json($rifiuti);
-})->name('getRifiuti');
-*/
-// ELOQUENT 
-Route::post('/getRifiuti', [getRifiuti::class, 'getRifiuti'])->name('getRifiuti');
+//Ajax ELOQUENT 
+Route::post('/getRifiuti', [Ajax::class, 'get_rifiuti'])->name('getRifiuti');
+Route::post('/getCCR', [Ajax::class, 'getCCR'])->name('getCCR');
+Route::post('/getComuni', [Ajax::class, 'getComuni'])->name('getComuni');

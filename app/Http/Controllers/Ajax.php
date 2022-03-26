@@ -7,20 +7,22 @@ use App\Models\Rifiuti;
 use App\Models\CCR;
 use App\Models\Comuni;
 
-
-class getRifiuti extends Controller
+class Ajax extends Controller
 {
-    public function getRifiuti()
+
+    public function get_rifiuti()
     {
         $rifiuti = Rifiuti::all();
         return response()->json($rifiuti);
     }
+
 
     public function getCCR()
     {
         $ccr = CCR::all();
         return response()->json($ccr);
     }
+
 
     public function getComuni()
     {

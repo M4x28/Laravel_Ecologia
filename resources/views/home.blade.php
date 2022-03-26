@@ -379,7 +379,7 @@
 
         $(document).ready(function() {
             $.ajax({
-                url: "{{ route('getRifiuti') }}",
+                url: "{{ route('getCCR') }}",
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}"
@@ -402,7 +402,7 @@
                 }
             });
             $.ajax({
-                url: "{{ route('getRifiuti') }}",
+                url: "{{ route('getComuni') }}",
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}"
@@ -413,7 +413,7 @@
                     //console.log(response);
                     $("#listaComuni").empty();
                     for (var i = 0; i < len; i++) {
-                        $("#listaComuni").append("<option value='" + response[i]['id'] + "'>" +
+                        $("#listaComuni").append("<option value='" + response[i]['istat'] + "'>" +
                             response[i]['comune'] + "</option>");
                     }
                 },
