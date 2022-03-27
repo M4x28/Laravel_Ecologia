@@ -5,7 +5,7 @@
 @section('content')
     <section>
         <div class="parallax a" id="parallax">
-            <h2 class="display-1 text-white"><strong><em>{{ __('Protect nature') }}</em></strong></h2>
+            <h2 class="display-1 text-white" id="title1"><strong><em>{{ __('Protect nature') }}</em></strong></h2>
         </div>
         <div class="parallax b">
 
