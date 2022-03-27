@@ -55,3 +55,7 @@ html {
         rgba(56, 249, 215, 1)
     );
 }
+
+.shadow-custom {
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .25), 0 3px 10px 5px rgba(0, 0, 0, 0.05) !important;
+}
