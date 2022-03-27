@@ -276,6 +276,14 @@
                                                 id="formFileLg" type="file" name='UPCalendar' />
                                         </div>
                                     </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-center mt-2">
+                                        <div class="col-md-6">
+                                            <!-- Submit button -->
+                                            <button type="submit"
+                                                class="btn btn-primary bg-gradient btn-block btn-lg">{{ __('Send') }}</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
