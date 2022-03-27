@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RifiutiController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Ajax;
 use app\Models\Comuni_aderenti;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +22,8 @@ use app\Models\Comuni_aderenti;
 // Auth
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('profile.home');
-
+//Route::get('/home', [HomeController::class, 'index']);
+Route::resource('home', HomeController::class);
 
 // Lingua
 Route::get('lang/{locale}', function ($locale = 'en') {
@@ -50,8 +50,6 @@ Route::get('comune/{val}', function ($val) {
     return $val;
 });
 
-
-//Route::resource('index', RifiutiController::class);
 
 //Ajax ELOQUENT 
 Route::post('/getRifiuti', [Ajax::class, 'get_rifiuti'])->name('getRifiuti');
