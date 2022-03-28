@@ -22,8 +22,8 @@ use App\Http\Controllers\HomeController;
 // Auth
 Auth::routes();
 
-//Route::get('/home', [HomeController::class, 'index']);
-Route::resource('home', HomeController::class);
+Route::get('/home', [HomeController::class, 'create']);
+//Route::resource('home', HomeController::class);
 
 // Lingua
 Route::get('lang/{locale}', function ($locale = 'en') {
