@@ -8,6 +8,12 @@
 
 
 @section('content')
+    @if (session()->has('store_feedback'))
+        <div class="alert alert-success">
+            <h2 class="text-center">{{ __('Inserimento avvenuto con successo!') }}</h2>
+        </div>
+    @endif
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -37,7 +43,7 @@
                         <div class="tab-content" id="ex2-content">
                             <div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel"
                                 aria-labelledby="ex3-tab-1">
-                                <form action="{{ route('home.store') }}" method="POST">
+                                <form action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="container mt-4">
@@ -86,7 +92,7 @@
                                                         class="form-label text-black">{{ __('Upload Mappa') }}</label>
                                                     <input
                                                         class="form-control form-control-lg btn btn-secondary bg-gradient"
-                                                        id="formFileLg" type="file" name='UPMappa' />
+                                                        id="formFileLg" type="file" name='UPMappa' accept="image/*" />
                                                 </div>
                                             </div>
                                         </div>

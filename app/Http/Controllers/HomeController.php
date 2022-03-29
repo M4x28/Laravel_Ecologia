@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Comuni_aderenti;
@@ -55,31 +56,42 @@ class HomeController extends Controller
             case 'btnCity':
 
                 //Extends Validator for custom validation
+                //File required, max 10000kb, only jpeg,jpg,png file
                 $validator = Validator::make($request->all(), [
                     'ComuneSelezionato' => ['required', 'integer'],
                     'IndirizzoPaese' => 'required',
                     'CCRSelezionato' => 'required',
-                    'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,png,jpg']
+                    'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,jpg,png']
                 ]);
 
                 //Validation Fails
                 if ($validator->fails()) return redirect('home')->withErrors($validator)->withInput();
 
+                //Validate Data
+                $data = $validator->validate();
+
+                //------ IF Validation works -------
+
                 //File
                 //$img_size = $request->file('UPMappa')->getSize();
-                $img_name = $request->file('UPMappa')->getClientOriginalName();
+                //$img_name = $request->file('UPMappa')->getClientOriginalName();
+
+                //Store in storage>app>public>users_img with UUID
+                $uuid = Str::uuid()->toString();
+                $img_name = $uuid . '.' . $request->file('UPMappa')->getClientOriginalExtension();
                 $request->file('UPMappa')->storeAs('public/users_img/', $img_name);
 
-                //Validation works
                 $comune = new Comuni_aderenti();
 
-                $comune->indirizzo = strip_tags($request->input('IndirizzoPaese'));
+                $comune->indirizzo = strip_tags($data['IndirizzoPaese']);
                 $comune->mappa = $img_name;
-                $comune->fk_ccr = strip_tags($request->input('CCRSelezionato'));
-                $comune->fk_comune = strip_tags($request->input('ComuneSelezionato'));
+                $comune->fk_ccr = strip_tags($data['CCRSelezionato']);
+                $comune->fk_comune = strip_tags($data['ComuneSelezionato']);
 
                 //INSERT
                 $comune->save();
+
+                return redirect()->back()->with('store_feedback', '1');
 
                 break;
             case 'btnCCR':
