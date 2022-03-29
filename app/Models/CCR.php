@@ -18,11 +18,11 @@ class CCR extends Model
 
 
     protected $fillable = [
-        'id',
         'nome',
         'email',
         'indirizzo',
         'lon',
-        'lat'
+        'lat',
+        'fk_comune'
     ];
 }

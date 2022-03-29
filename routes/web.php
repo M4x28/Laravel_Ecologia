@@ -33,9 +33,7 @@ Route::get('lang/{locale}', function ($locale = 'en') {
         app()->setLocale($locale);
     }
 
-    $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
-        ->distinct()
-        ->get(['COMUNI_UFF.comune']);
+    $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
     //return view('index')->with('smistamento', null);
     return View::make('index', [
         'smistamento' => null,
@@ -57,3 +55,4 @@ Route::get('comune/{val}', function ($val) {
 Route::post('/getRifiuti', [Ajax::class, 'get_rifiuti'])->name('getRifiuti');
 Route::post('/getCCR', [Ajax::class, 'getCCR'])->name('getCCR');
 Route::post('/getComuni', [Ajax::class, 'getComuni'])->name('getComuni');
+Route::post('/getComuniAderenti', [Ajax::class, 'getComuniAderenti'])->name('getComuniAderenti');

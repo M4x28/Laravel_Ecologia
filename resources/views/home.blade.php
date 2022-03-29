@@ -33,8 +33,7 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="ex3-tab-3" data-mdb-toggle="pill" href="#ex3-pills-3"
-                                    role="tab" aria-controls="ex3-pills-3"
-                                    aria-selected="false">{{ __('Add Calendar') }}</a>
+                                    role="tab" aria-controls="ex3-pills-3" aria-selected="false">{{ __('Add Area') }}</a>
                             </li>
                         </ul>
                         <!-- Pills navs -->
@@ -73,29 +72,16 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="row d-flex justify-content-center m-4">
-                                            <div class="col-md-6">
-                                                <div class="form-outline">
-                                                    <input type="text" class="form-control form-control-lg" list="listaCCR"
-                                                        name="CCRSelezionato" id="inputCCR">
-                                                    <datalist id="listaCCR"></datalist>
-                                                    <label class="form-label" for="inputCCR">{{ __('CCR') }}</label>
-                                                </div>
-                                                <!-- Error for the validating -->
-                                                @error('CCRSelezionato')
-                                                    <div class="text-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col-md-6 m-4">
-                                                    <label for="formFileLg"
-                                                        class="form-label text-black">{{ __('Upload Mappa') }}</label>
-                                                    <input
-                                                        class="form-control form-control-lg btn btn-secondary bg-gradient"
-                                                        id="formFileLg" type="file" name='UPMappa' accept="image/*" />
-                                                </div>
+
+                                        <div class="row d-flex justify-content-center">
+                                            <div class="col-md-6 m-4">
+                                                <label for="formFileLg"
+                                                    class="form-label text-black">{{ __('Upload Mappa') }}</label>
+                                                <input class="form-control form-control-lg btn btn-secondary bg-gradient"
+                                                    id="formFileLg" type="file" name='UPMappa' accept="image/*" />
                                             </div>
                                         </div>
+
                                         <hr>
                                         <div class="d-flex justify-content-center">
                                             <div class="col-md-6">
@@ -111,20 +97,20 @@
                                 <form action="" method="POST">
                                     @csrf
 
-                                    <div class="row mt-4">
-                                        <h3 class="mb-3 text-center text-info">Informazioni</h3>
-                                        <div class="col-md-6">
+                                    <div class="row d-flex justify-content-center mt-4">
+                                        <h3 class="mb-5 text-center text-info">Informazioni CCR</h3>
+                                        <div class="col-md-5">
                                             <!-- Name input -->
                                             <div class="form-outline mb-4">
-                                                <input type="text" id="form4Example1" class="form-control"
+                                                <input type="text" id="form4Example1" class="form-control form-control-lg"
                                                     name='CCRName' />
                                                 <label class="form-label" for="form4Example1">Nome</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <!-- Email input -->
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="form4Example2" class="form-control"
+                                                <input type="email" id="form4Example2" class="form-control form-control-lg"
                                                     name='CCREmail' />
                                                 <label class="form-label" for="form4Example2">Email address</label>
                                             </div>
@@ -158,11 +144,29 @@
 
                                     <hr>
 
+                                    <div class="row d-flex justify-content-center m-5">
+                                        <div class="col-md-6">
+                                            <div class="form-outline">
+                                                <input type="text" class="form-control form-control-lg"
+                                                    list="listaComuniAderenti" name="ComuneAderenteSelezionato"
+                                                    id="inputComuniAderenti">
+                                                <datalist id="listaComuniAderenti"></datalist>
+                                                <label class="form-label"
+                                                    for="inputComuniAderenti">{{ __('Comune di appartenenza') }}</label>
+                                            </div>
+                                            <!-- Error for the validating -->
+                                            @error('ComuneAderenteSelezionato')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <hr>
                                     <div class="row">
                                         <h3 class="mb-3 text-center text-secondary">Orari</h3>
                                         <!-- Lunedì -->
                                         <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Lunedì</div>
+                                            <div class="col-md-2 text-center">Lunedì-Venerdì</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form12" class="form-control" name='Apertura' />
@@ -172,74 +176,6 @@
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form13" class="form-control" name='Chiusura' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Martedì -->
-                                        <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Martedì</div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
-                                                    <label class="form-label" for="form12">Apertura</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Mercoledì -->
-                                        <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Mercoledì</div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
-                                                    <label class="form-label" for="form12">Apertura</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Giovedì -->
-                                        <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Giovedì</div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control"
-                                                        name='Apertura' />
-                                                    <label class="form-label" for="form12">Apertura</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control"
-                                                        name='Chiusura' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Venerdì -->
-                                        <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Venerdì</div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control"
-                                                        name='Apertura' />
-                                                    <label class="form-label" for="form12">Apertura</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control"
-                                                        name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -249,15 +185,13 @@
                                             <div class="col-md-2 text-center">Sabato</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control"
-                                                        name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control"
-                                                        name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -267,15 +201,13 @@
                                             <div class="col-md-2 text-center">Domenica</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control"
-                                                        name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control"
-                                                        name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -283,6 +215,7 @@
                                     </div>
 
                                     <hr>
+
                                     <div class="d-flex justify-content-center">
                                         <div class="col-md-6">
                                             <!-- Submit button -->
@@ -297,7 +230,41 @@
                                 <form action="" method="post">
                                     @csrf
 
+                                    <div class="row d-flex justify-content-center mt-4">
+                                        <h3 class="mb-5 text-center text-info">Informazioni Area</h3>
+                                        <div class="col-md-5">
+                                            <!-- Name input -->
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="form4Example1" class="form-control form-control-lg"
+                                                    name='AreaName' />
+                                                <label class="form-label" for="form4Example1">Nome</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-outline">
+                                                <input type="text" class="form-control form-control-lg"
+                                                    list="listaComuniAderenti" name="ComuneAderenteAreaSelezionato"
+                                                    id="inputComuniAderenti">
+                                                <datalist id="listaComuniAderenti"></datalist>
+                                                <label class="form-label"
+                                                    for="inputComuniAderenti">{{ __('Comune di appartenenza') }}</label>
+                                            </div>
+                                            <!-- Error for the validating -->
+                                            @error('ComuneAderenteSelezionato')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
                                     <div class="row d-flex justify-content-center">
+                                        <div class="col-md-4 m-4">
+                                            <label for="formFileLg"
+                                                class="form-label text-black">{{ __('Upload Zone') }}</label>
+                                            <input class="form-control form-control-lg btn btn-info bg-gradient"
+                                                id="formFileLg" type="file" name='UPZone' />
+                                        </div>
                                         <div class="col-md-4 m-4">
                                             <label for="formFileLg"
                                                 class="form-label text-black">{{ __('Upload Calendar') }}</label>
@@ -305,8 +272,10 @@
                                                 id="formFileLg" type="file" name='UPCalendar' />
                                         </div>
                                     </div>
+
                                     <hr>
-                                    <div class="d-flex justify-content-center mt-2">
+
+                                    <div class="d-flex justify-content-center mt-4">
                                         <div class="col-md-6">
                                             <!-- Submit button -->
                                             <button type="submit" class="btn btn-primary bg-gradient btn-block btn-lg"
@@ -416,7 +385,7 @@
 
         $(document).ready(function() {
             $.ajax({
-                url: "{{ route('getCCR') }}",
+                url: "{{ route('getComuniAderenti') }}",
                 type: "POST",
                 data: {
                     "_token": "{{ csrf_token() }}"
@@ -425,10 +394,10 @@
                 success: function(response) {
                     var len = response.length;
                     //console.log(response);
-                    $("#listaCCR").empty();
+                    $("#listaComuniAderenti").empty();
                     for (var i = 0; i < len; i++) {
-                        $("#listaCCR").append("<option value='" + response[i]['id'] + "'>" +
-                            response[i]['nome'] + "</option>");
+                        $("#listaComuniAderenti").append("<option value='" + response[i]['id'] + "'>" +
+                            response[i]['comune'] + "</option>");
                     }
                 },
                 error: function(xhr, textStatus, error) {

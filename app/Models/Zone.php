@@ -10,9 +10,9 @@ class Zone extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'nome',
         'calendario',
-        'img'
+        'img',
+        'fk_comune'
     ];
 }

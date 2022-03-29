@@ -17,11 +17,8 @@ class Comuni_aderenti extends Model
     protected $table = 'COMUNI_ADERENTI';
 
     protected $fillable = [
-        'id',
         'indirizzo',
         'mappa',
-        'fk_ccr',
-        'fk_comune',
-        'fk_zona'
+        'fk_comune'
     ];
 }

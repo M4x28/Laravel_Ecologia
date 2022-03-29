@@ -60,7 +60,6 @@ class HomeController extends Controller
                 $validator = Validator::make($request->all(), [
                     'ComuneSelezionato' => ['required', 'integer'],
                     'IndirizzoPaese' => 'required',
-                    'CCRSelezionato' => 'required',
                     'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,jpg,png']
                 ]);
 
@@ -85,7 +84,6 @@ class HomeController extends Controller
 
                 $comune->indirizzo = strip_tags($data['IndirizzoPaese']);
                 $comune->mappa = $img_name;
-                $comune->fk_ccr = strip_tags($data['CCRSelezionato']);
                 $comune->fk_comune = strip_tags($data['ComuneSelezionato']);
 
                 //INSERT
