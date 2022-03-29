@@ -21,6 +21,7 @@ class Comuni_aderenti extends Model
         'indirizzo',
         'mappa',
         'fk_ccr',
+        'fk_comune',
         'fk_zona'
     ];
 }

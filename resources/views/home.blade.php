@@ -37,7 +37,7 @@
                         <div class="tab-content" id="ex2-content">
                             <div class="tab-pane fade show active" id="ex3-pills-1" role="tabpanel"
                                 aria-labelledby="ex3-tab-1">
-                                <form action="" method="POST">
+                                <form action="{{ route('home.store') }}" method="POST">
                                     @csrf
 
                                     <div class="container mt-4">
@@ -50,6 +50,10 @@
                                                     <label class="form-label"
                                                         for="inputComune">{{ __('City') }}</label>
                                                 </div>
+                                                <!-- Error for the validating -->
+                                                @error('ComuneSelezionato')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-outline">
@@ -57,15 +61,32 @@
                                                         name='IndirizzoPaese' />
                                                     <label class="form-label" for="form12">Indirizzo</label>
                                                 </div>
+                                                <!-- Error for the validating -->
+                                                @error('IndirizzoPaese')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="row d-flex justify-content-center m-4">
                                             <div class="col-md-6">
                                                 <div class="form-outline">
                                                     <input type="text" class="form-control form-control-lg" list="listaCCR"
-                                                        name="ComuneSelezionato" id="inputCCR">
+                                                        name="CCRSelezionato" id="inputCCR">
                                                     <datalist id="listaCCR"></datalist>
                                                     <label class="form-label" for="inputCCR">{{ __('CCR') }}</label>
+                                                </div>
+                                                <!-- Error for the validating -->
+                                                @error('CCRSelezionato')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-md-6 m-4">
+                                                    <label for="formFileLg"
+                                                        class="form-label text-black">{{ __('Upload Mappa') }}</label>
+                                                    <input
+                                                        class="form-control form-control-lg btn btn-secondary bg-gradient"
+                                                        id="formFileLg" type="file" name='UPMappa' />
                                                 </div>
                                             </div>
                                         </div>
@@ -73,8 +94,8 @@
                                         <div class="d-flex justify-content-center">
                                             <div class="col-md-6">
                                                 <!-- Submit button -->
-                                                <button type="submit"
-                                                    class="btn btn-primary bg-gradient btn-block btn-lg">{{ __('Send') }}</button>
+                                                <button type="submit" class="btn btn-primary bg-gradient btn-block btn-lg"
+                                                    name="btn" value='btnCity'>{{ __('Send') }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -186,13 +207,15 @@
                                             <div class="col-md-2 text-center">Giovedì</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='Apertura' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='Chiusura' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -257,8 +280,8 @@
                                     <div class="d-flex justify-content-center">
                                         <div class="col-md-6">
                                             <!-- Submit button -->
-                                            <button type="submit"
-                                                class="btn btn-primary bg-gradient btn-block btn-lg mb-4">{{ __('Send') }}</button>
+                                            <button type="submit" class="btn btn-primary bg-gradient btn-block btn-lg mb-4"
+                                                name="btn" value="btnCCR">{{ __('Send') }}</button>
                                         </div>
                                     </div>
 
@@ -280,8 +303,8 @@
                                     <div class="d-flex justify-content-center mt-2">
                                         <div class="col-md-6">
                                             <!-- Submit button -->
-                                            <button type="submit"
-                                                class="btn btn-primary bg-gradient btn-block btn-lg">{{ __('Send') }}</button>
+                                            <button type="submit" class="btn btn-primary bg-gradient btn-block btn-lg"
+                                                name="btn" value="btnCalendario">{{ __('Send') }}</button>
                                         </div>
                                     </div>
                                 </form>

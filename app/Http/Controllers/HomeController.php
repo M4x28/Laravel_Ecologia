@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Models\Comuni_aderenti;
+use App\Models\CCR;
+
 
 class HomeController extends Controller
 {
@@ -44,7 +48,47 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['btn' => ['required', 'max:14']]);
+        $btn = strip_tags($request->input('btn'));
+
+        switch ($btn) {
+            case 'btnCity':
+
+                //Extends Validator for custom validation
+                $validator = Validator::make($request->all(), [
+                    'ComuneSelezionato' => ['required', 'integer'],
+                    'IndirizzoPaese' => 'required',
+                    'CCRSelezionato' => 'required',
+                    'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,png,jpg']
+                ]);
+
+                //Validation Fails
+                if ($validator->fails()) return redirect('home')->withErrors($validator)->withInput();
+
+                //File
+                //$img_size = $request->file('UPMappa')->getSize();
+                $img_name = $request->file('UPMappa')->getClientOriginalName();
+                $request->file('UPMappa')->storeAs('public/users_img/', $img_name);
+
+                //Validation works
+                $comune = new Comuni_aderenti();
+
+                $comune->indirizzo = strip_tags($request->input('IndirizzoPaese'));
+                $comune->mappa = $img_name;
+                $comune->fk_ccr = strip_tags($request->input('CCRSelezionato'));
+                $comune->fk_comune = strip_tags($request->input('ComuneSelezionato'));
+
+                //INSERT
+                $comune->save();
+
+                break;
+            case 'btnCCR':
+
+                break;
+            case 'btnCalendario':
+
+                break;
+        }
     }
 
     /**
