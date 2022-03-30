@@ -23,6 +23,12 @@ class CCR extends Model
         'indirizzo',
         'lon',
         'lat',
-        'fk_comune'
+        'fk_comune',
+        'AperturaSett',
+        'ChiusuraSett',
+        'AperturaSab',
+        'ChiusuraSab',
+        'AperturaDom',
+        'ChiusuraDom'
     ];
 }

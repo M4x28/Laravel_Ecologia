@@ -94,7 +94,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-                                <form action="" method="POST">
+                                <form action="{{ route('home.store') }}" method="POST">
                                     @csrf
 
                                     <div class="row d-flex justify-content-center mt-4">
@@ -132,12 +132,12 @@
                                             <div class="row m-3">
                                                 <label class="form-label" for="">Longitudine</label>
                                                 <input type="text" id="lon" class="form-control" name='CCRLon' value=''
-                                                    disabled />
+                                                    readonly />
                                             </div>
                                             <div class="row m-3">
                                                 <label class="form-label" for="form3Example3">Latitudine</label>
                                                 <input type="text" id="lat" class="form-control" name='CCRLat' value=''
-                                                    disabled />
+                                                    readonly />
                                             </div>
                                         </div>
                                     </div>
@@ -169,13 +169,13 @@
                                             <div class="col-md-2 text-center">Lunedì-Venerdì</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control" name='AperturaSett' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control" name='ChiusuraSett' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -185,13 +185,13 @@
                                             <div class="col-md-2 text-center">Sabato</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control" name='AperturaSab' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control" name='ChiusuraSab' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -201,13 +201,13 @@
                                             <div class="col-md-2 text-center">Domenica</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='Apertura' />
+                                                    <input type="time" id="form12" class="form-control" name='AperturaDom' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='Chiusura' />
+                                                    <input type="time" id="form13" class="form-control" name='ChiusuraDom' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="ex3-pills-3" role="tabpanel" aria-labelledby="ex3-tab-3">
-                                <form action="" method="post">
+                                <form action="{{ route('home.store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="row d-flex justify-content-center mt-4">
@@ -263,7 +263,7 @@
                                             <label for="formFileLg"
                                                 class="form-label text-black">{{ __('Upload Zone') }}</label>
                                             <input class="form-control form-control-lg btn btn-info bg-gradient"
-                                                id="formFileLg" type="file" name='UPZone' />
+                                                id="formFileLg" type="file" name='UPZone' accept="image/*" />
                                         </div>
                                         <div class="col-md-4 m-4">
                                             <label for="formFileLg"
