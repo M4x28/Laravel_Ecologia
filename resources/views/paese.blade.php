@@ -8,4 +8,5 @@
 @endsection
 
 @section('scripts')
+
 @endsection

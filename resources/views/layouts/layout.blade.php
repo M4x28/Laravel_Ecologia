@@ -57,7 +57,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($comuni_aderenti as $comune)
                                 <li>
-                                    <a class="dropdown-item" href="{{ url('comune/' . $comune->comune) }}">
+                                    <a class="dropdown-item" href="{{ route('getPaese') }}">
                                         {{ $comune->comune }}
                                     </a>
                                 </li>
