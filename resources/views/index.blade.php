@@ -9,12 +9,17 @@
         </div>
         <div class="parallax b">
 
-            <div class="d-flex justify-content-center p-5 bg-light" style="border-radius:40px;">
+            <div class="d-flex justify-content-center" style="border-radius:40px;">
                 <form action="{{ route('index.getCestino') }}" method="POST">
                     @csrf
 
-                    <div class="row">
-                        <div class="col-md-8">
+                    <div class="row d-flex justify-content-center m-5 p-5">
+                        <div class="col-md-12">
+                            <div class="text-warning display-1"><em>{{ __('Cerca un rifiuto') }}</em></div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-md-6">
                             <div class="form-outline">
                                 <input type="text" class="form-control form-control-lg" list="listaRifiuti"
                                     name="rifiutoSelezionato" id="inputRifiuto">
