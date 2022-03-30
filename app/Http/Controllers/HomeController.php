@@ -28,7 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
+        return view('home', [
+            'smistamento' => null,
+            'comuni_aderenti' => $comuni
+        ]);
     }
 
     /**

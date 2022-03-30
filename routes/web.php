@@ -5,9 +5,9 @@ use App\Http\Controllers\RifiutiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Ajax;
-use app\Models\Comuni_aderenti;
+use App\Models\Comuni_aderenti;
 use App\Http\Controllers\HomeController;
-use app\http\Controllers\ComuneInfo;
+use App\http\Controllers\ComuneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +47,7 @@ Route::get('lang/{locale}', function ($locale = 'en') {
 Route::get('/', [RifiutiController::class, 'index'])->name('index');
 Route::post('index', [RifiutiController::class, 'getCestino'])->name('index.getCestino');
 
-//Route::resource('comune', ComuneController::class);
-Route::get('comune/{val?}', [ComuneInfo::class, 'getPaese'])->name('getPaese');
+Route::resource('comune', ComuneController::class);
 
 //Ajax ELOQUENT 
 Route::post('/getRifiuti', [Ajax::class, 'get_rifiuti'])->name('getRifiuti');
