@@ -18,6 +18,9 @@
     <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/personal.css?v=') . time() }}" rel="stylesheet">
 
+    <!-- MapBox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body @yield('body')>

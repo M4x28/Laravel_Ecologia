@@ -19,6 +19,7 @@ class Comuni_aderenti extends Model
     protected $fillable = [
         'indirizzo',
         'mappa',
+        'logo',
         'fk_comune'
     ];
 }

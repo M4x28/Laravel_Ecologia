@@ -64,7 +64,8 @@ class HomeController extends Controller
                 $validator = Validator::make($request->all(), [
                     'ComuneSelezionato' => ['required', 'integer'],
                     'IndirizzoPaese' => 'required',
-                    'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,jpg,png']
+                    'UPMappa' => ['required', 'max:10000', 'mimes:jpeg,jpg,png'],
+                    'UPLogo' =>  ['required', 'max:10000', 'mimes:png']
                 ]);
 
                 //Validation Fails
@@ -84,10 +85,15 @@ class HomeController extends Controller
                 $img_name = $uuid . '.' . $request->file('UPMappa')->getClientOriginalExtension();
                 $request->file('UPMappa')->storeAs('public/img_comuni/', $img_name);
 
+                $uuid1 = Str::uuid()->toString();
+                $img_name_logo = $uuid1 . '.' . $request->file('UPLogo')->getClientOriginalExtension();
+                $request->file('UPLogo')->storeAs('public/img_logo_comuni/', $img_name_logo);
+
                 $comune = new Comuni_aderenti();
 
                 $comune->indirizzo = strip_tags($data['IndirizzoPaese']);
-                $comune->mappa = $img_name;
+                $comune->mappa = '../storage/app/public/img_comuni/' . $img_name;
+                $comune->logo = '../storage/app/public/img_logo_comuni/' . $img_name_logo;
                 $comune->fk_comune = strip_tags($data['ComuneSelezionato']);
 
                 //INSERT
@@ -171,8 +177,8 @@ class HomeController extends Controller
                 $zone = new Zone();
 
                 $zone->nome = strip_tags($data['AreaName']);
-                $zone->calendario = $img_name_calendario;
-                $zone->img = $img_name_zona;
+                $zone->calendario = '../storage/app/public/img_calendari/' . $img_name_calendario;
+                $zone->img = '../storage/app/public/img_zone/' . $img_name_zona;
                 $zone->fk_comune = strip_tags($data['ComuneAderenteAreaSelezionato']);
 
                 //INSERT

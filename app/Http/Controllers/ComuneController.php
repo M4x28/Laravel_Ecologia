@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comuni_aderenti;
+use App\Models\CCR;
+use App\Models\Zone;
 
 class ComuneController extends Controller
 {
@@ -48,14 +50,24 @@ class ComuneController extends Controller
     {
         $comune = strip_tags($comune);
 
-        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
-        
-        
-        
-        
+        $comuni_aderenti = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
+            ->get(['COMUNI_UFF.comune']);
+
+        $info_comune = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
+            ->where('COMUNI_UFF.comune', $comune)
+            ->get();
+
+        $ccr = CCR::join('COMUNI_ADERENTI', 'CCR.fk_comune', '=', 'COMUNI_ADERENTI.id')
+            ->where('COMUNI_ADERENTI.id', $info_comune[0]->id)
+            ->get();
+
+        //return $info_comune[0]->id;
         return view('paese', [
             'paese' => $comune,
-            'comuni_aderenti' => $comuni
+            'info_comune' => $info_comune,
+            'comuni_aderenti' => $comuni_aderenti,
+            'ccr' => $ccr
+
         ]);
     }
 

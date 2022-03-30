@@ -42,20 +42,33 @@ html {
     background: #43e97b;
 
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(
-        to right,
-        rgba(67, 233, 123, 1),
-        rgba(56, 249, 215, 1)
-    );
+    background: -webkit-linear-gradient(to right,
+            rgba(67, 233, 123, 1),
+            rgba(56, 249, 215, 1));
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(
-        to right,
-        rgba(67, 233, 123, 1),
-        rgba(56, 249, 215, 1)
-    );
+    background: linear-gradient(to right,
+            rgba(67, 233, 123, 1),
+            rgba(56, 249, 215, 1));
 }
 
 .shadow-custom {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .25), 0 3px 10px 5px rgba(0, 0, 0, 0.05) !important;
+}
+
+.sfondo {
+    background-image: url("../img/sfondo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 60vh;
+}
+
+.testoComune {
+    position: relative;
+    top: 40%;
+}
+
+.wallpaper {
+    background-image: url("../img/wallpaper1.png");
 }

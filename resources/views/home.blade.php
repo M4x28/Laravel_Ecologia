@@ -74,7 +74,13 @@
                                         </div>
 
                                         <div class="row d-flex justify-content-center">
-                                            <div class="col-md-6 m-4">
+                                            <div class="col-md-4 m-4">
+                                                <label for="formFileLg1"
+                                                    class="form-label text-black">{{ __('Upload Logo') }}</label>
+                                                <input class="form-control form-control-lg btn btn-danger bg-gradient"
+                                                    id="formFileLg1" type="file" name='UPLogo' accept="image/png" />
+                                            </div>
+                                            <div class="col-md-4 m-4">
                                                 <label for="formFileLg"
                                                     class="form-label text-black">{{ __('Upload Mappa') }}</label>
                                                 <input class="form-control form-control-lg btn btn-secondary bg-gradient"
@@ -169,13 +175,15 @@
                                             <div class="col-md-2 text-center">Lunedì-Venerdì</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='AperturaSett' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='AperturaSett' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='ChiusuraSett' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='ChiusuraSett' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -185,13 +193,15 @@
                                             <div class="col-md-2 text-center">Sabato</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='AperturaSab' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='AperturaSab' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='ChiusuraSab' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='ChiusuraSab' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
@@ -201,13 +211,15 @@
                                             <div class="col-md-2 text-center">Domenica</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form12" class="form-control" name='AperturaDom' />
+                                                    <input type="time" id="form12" class="form-control"
+                                                        name='AperturaDom' />
                                                     <label class="form-label" for="form12">Apertura</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
-                                                    <input type="time" id="form13" class="form-control" name='ChiusuraDom' />
+                                                    <input type="time" id="form13" class="form-control"
+                                                        name='ChiusuraDom' />
                                                     <label class="form-label" for="form13">Chiusura</label>
                                                 </div>
                                             </div>
