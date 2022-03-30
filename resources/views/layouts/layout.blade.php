@@ -70,7 +70,7 @@
 
                 <div class="d-flex align-items-center">
                     @auth
-                        <a id="navbarDropdown" class="nav-link" href="{{ route('home') }}" role="button"
+                        <a id="navbarDropdown" class="nav-link" href="{{ route('home.create') }}" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>

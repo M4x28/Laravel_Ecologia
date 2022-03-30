@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -37,7 +38,7 @@
         <!-- Container wrapper -->
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand text-success" href="{{ url('/home') }}">Ecologia</a>
+            <a class="navbar-brand text-success" href="{{ url('/') }}">Ecologia</a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -98,7 +99,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                                                                                                             document.getElementById('logout-form').submit();">
+                                                                                                                                                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
