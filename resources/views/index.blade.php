@@ -37,12 +37,19 @@
                         </div>
 
                     </div>
-                    <div class="row">
+                    <div class="row d-flex justify-content-center m-3">
                         <div class="col-md-12">
                             @if ($smistamento !== null and $smistamento !== 'vuoto')
                                 @foreach ($smistamento as $metodo)
-                                    <h3 class="m-2 text-center text-success">Questo elemento va gettato nel/la:
-                                        {{ $metodo->nome_c }}</h3>
+                                    <div class="card text-center">
+                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                            <img src="" class="img-fluid" />
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Questo elemento va gettato nel/la:
+                                                {{ $metodo->nome_c }}</h5>
+                                        </div>
+                                    </div>
                                 @endforeach
                             @elseif ($smistamento === 'vuoto')
                                 <h3 class="m-2 text-center text-danger">{{ __('Sorry we did not find any results') }}
