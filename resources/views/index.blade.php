@@ -9,7 +9,8 @@
         </div>
         <div class="parallax b">
 
-            <div class="d-flex justify-content-center" style="border-radius:40px;">
+            <div class="d-flex justify-content-center"
+                style="border-radius:40px;background-color: rgba(255, 255, 255, 0.6);">
                 <form action="{{ route('index.getCestino') }}" method="POST">
                     @csrf
 
@@ -43,7 +44,41 @@
                                 @foreach ($smistamento as $metodo)
                                     <div class="card text-center">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                            <img src="" class="img-fluid" />
+                                            @switch($metodo->nome_c)
+                                                @case('carta')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('plastica')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('secco')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('tessile')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('umido')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('vetro')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('lattine')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @case('ecocentro')
+                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                @break
+
+                                                @default
+                                            @endswitch
                                         </div>
                                         <div class="card-body">
                                             <h5 class="card-title">Questo elemento va gettato nel/la:
@@ -62,14 +97,14 @@
 
             </div>
         </div>
-        </div>
+
         <div class="parallax c">
             <h2>
                 <h2 class="display-1 text-black"><strong><em>{{ __('...Do it for the good of all') }}</em></strong></h2>
             </h2>
         </div>
         <div class="parallax d">
-            <h2>DIV 4</h2>
+            <h2></h2>
         </div>
     </section>
 
