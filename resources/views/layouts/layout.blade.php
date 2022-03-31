@@ -29,7 +29,7 @@
 
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow-5-strong">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-5-strong">
         <!-- Container wrapper -->
         <div class="container">
             <!-- Navbar brand -->

@@ -61,13 +61,17 @@ class ComuneController extends Controller
             ->where('COMUNI_ADERENTI.id', $info_comune[0]->id)
             ->get();
 
-        //return $info_comune[0]->id;
+        $zone = Zone::join('COMUNI_ADERENTI', 'ZONE.fk_comune', '=', 'COMUNI_ADERENTI.id')
+            ->where('COMUNI_ADERENTI.id', $info_comune[0]->id)
+            ->get();
+
+        //return $zone;
         return view('paese', [
             'paese' => $comune,
             'info_comune' => $info_comune,
             'comuni_aderenti' => $comuni_aderenti,
-            'ccr' => $ccr
-
+            'ccr' => $ccr,
+            'zone' => $zone
         ]);
     }
 
