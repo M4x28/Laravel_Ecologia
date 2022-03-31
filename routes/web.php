@@ -21,11 +21,11 @@ use App\http\Controllers\ComuneController;
 */
 
 // Auth
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [HomeController::class, 'create']);
 //Route::post('/home', [HomeController::class, 'store'])->name('home.store');
-Route::resource('home', HomeController::class);
+Route::resource('home', HomeController::class)->middleware('verified');
 
 
 // Lingua
