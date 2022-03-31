@@ -7,20 +7,14 @@ use App\Models\Rifiuti;
 use App\Models\Comuni_aderenti;
 use Illuminate\Support\Facades\DB;
 
-
 class RifiutiController extends Controller
 {
     public function index()
     {
         // Load index view
-
-        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
-            ->distinct()
-            ->get(['COMUNI_UFF.comune']);
-
         return view('index', [
             'smistamento' => null,
-            'comuni_aderenti' => $comuni
+            'comuni_aderenti' => $this->getAderenti()
         ]);
     }
 
@@ -44,12 +38,22 @@ class RifiutiController extends Controller
 
         if (count($smistamento) > 0) {
             return view('index', [
-                'smistamento' => $smistamento
+                'smistamento' => $smistamento,
+                'comuni_aderenti' => $this->getAderenti()
             ]);
         } else {
             return view('index', [
-                'smistamento' => 'vuoto'
+                'smistamento' => 'vuoto',
+                'comuni_aderenti' => $this->getAderenti()
             ]);
         }
+    }
+
+    public function getAderenti()
+    {
+        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')
+            ->get(['COMUNI_UFF.comune']);
+
+        return $comuni;
     }
 }

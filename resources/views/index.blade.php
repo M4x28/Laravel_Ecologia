@@ -10,7 +10,7 @@
         <div class="parallax b">
 
             <div class="d-flex justify-content-center"
-                style="border-radius:40px;background-color: rgba(255, 255, 255, 0.6);">
+                style="border-radius:40px;background-color: rgba(255, 255, 255, 0.65);">
                 <form action="{{ route('index.getCestino') }}" method="POST">
                     @csrf
 
@@ -38,60 +38,60 @@
                         </div>
 
                     </div>
-                    <div class="row d-flex justify-content-center m-3">
-                        <div class="col-md-12">
-                            @if ($smistamento !== null and $smistamento !== 'vuoto')
-                                @foreach ($smistamento as $metodo)
-                                    <div class="card text-center">
-                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                            @switch($metodo->nome_c)
-                                                @case('carta')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
 
-                                                @case('plastica')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                    @if ($smistamento !== null and $smistamento !== 'vuoto')
+                        @foreach ($smistamento as $metodo)
+                            <div class="d-flex justify-content-center p-5">
+                                <div class="card border border-success text-center" style="width: 300px; max-height:300px;">
+                                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                        @switch($metodo->nome_c)
+                                            @case('carta')
+                                                <img src="{{ asset('img/') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('secco')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('plastica')
+                                                <img src="{{ asset('img/carta.jpg') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('tessile')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('secco')
+                                                <img src="{{ asset('img/') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('umido')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('tessile')
+                                                <img src="{{ asset('img/') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('vetro')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('umido')
+                                                <img src="{{ asset('img/organico.jpg') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('lattine')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('vetro')
+                                                <img src="{{ asset('img/vetro.jpg') }}" class="img-fluid" />
+                                            @break
 
-                                                @case('ecocentro')
-                                                    <img src="{{ asset('img/') }}" class="img-fluid" />
-                                                @break
+                                            @case('lattine')
+                                                <img src="{{ asset('img/plastica.jpg') }}" class="img-fluid" />
+                                            @break
 
-                                                @default
-                                            @endswitch
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Questo elemento va gettato nel/la:
-                                                {{ $metodo->nome_c }}</h5>
-                                        </div>
+                                            @case('ecocentro')
+                                                <img src="{{ asset('img/ccr.jpg') }}" class="img-fluid" />
+                                            @break
+
+                                            @default
+                                        @endswitch
                                     </div>
-                                @endforeach
-                            @elseif ($smistamento === 'vuoto')
-                                <h3 class="m-2 text-center text-danger">{{ __('Sorry we did not find any results') }}
-                                </h3>
-                            @endif
-                        </div>
-                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Questo elemento va gettato nel/la:
+                                            {{ $metodo->nome_c }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @elseif ($smistamento === 'vuoto')
+                        <h3 class="m-2 text-center text-danger">{{ __('Sorry we did not find any results') }}
+                        </h3>
+                    @endif
+
 
                 </form>
 

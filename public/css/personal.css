@@ -25,6 +25,7 @@ html {
 
 .parallax.b {
     background-image: url("../img/vector.png");
+    height: 120vh;
 }
 
 .parallax.c {
