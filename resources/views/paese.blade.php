@@ -79,6 +79,14 @@
                         width="500">
                 </div>
             </div>
+            <div class="d-flex justify-content-center m-3">
+                <a class="btn btn-outline-info btn-rounded btn-lg" href="{{ asset($zona->calendario) }}" role="button"
+                    download="{{ asset($zona->calendario) }}">
+                    <i class="fas fa-download fa-lg"></i>
+                    <strong>Scarica Calendario</strong>
+                </a>
+            </div>
+            <hr>
         @endforeach
     </div>
 
