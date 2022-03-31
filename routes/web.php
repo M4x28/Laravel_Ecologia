@@ -34,12 +34,18 @@ Route::get('lang/{locale}', function ($locale = 'en') {
         app()->setLocale($locale);
     }
 
-    $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
-    //return view('index')->with('smistamento', null);
-    return View::make('index', [
-        'smistamento' => null,
-        'comuni_aderenti' => $comuni
-    ]);
+    $previous = explode('/', url()->previous());
+
+    if ($previous[count($previous) - 2] == 'public') {
+        $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
+        //return view('index')->with('smistamento', null);
+        return View::make('index', [
+            'smistamento' => null,
+            'comuni_aderenti' => $comuni
+        ]);
+    } else {
+        return redirect()->back();
+    }
 });
 
 
