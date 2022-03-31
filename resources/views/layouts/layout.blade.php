@@ -71,6 +71,17 @@
                 </ul>
                 <!-- Left links -->
 
+                <div class="d-flex align-items-center pr-2">
+                    <h5>Visite</h5>
+                    <div id="sfcmu1jx497g7gdkmd91cu7t3udlfpasjtu"></div>
+                    <script type="text/javascript"
+                                        src="https://counter9.stat.ovh/private/counter.js?c=mu1jx497g7gdkmd91cu7t3udlfpasjtu&down=async"
+                                        async></script><noscript><a href="https://www.contatoreaccessi.com" title="contatore"><img
+                                src="https://counter9.stat.ovh/private/contatoreaccessi.php?c=mu1jx497g7gdkmd91cu7t3udlfpasjtu"
+                                border="0" title="contatore" alt="contatore"></a></noscript>
+                </div>
+
+                <div></div>
                 <div class="d-flex align-items-center">
                     @auth
                         <a id="navbarDropdown" class="nav-link" href="{{ route('home.create') }}" role="button"
