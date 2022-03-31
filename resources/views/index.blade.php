@@ -46,19 +46,19 @@
                                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                         @switch($metodo->nome_c)
                                             @case('carta')
-                                                <img src="{{ asset('img/') }}" class="img-fluid" />
-                                            @break
-
-                                            @case('plastica')
                                                 <img src="{{ asset('img/carta.jpg') }}" class="img-fluid" />
                                             @break
 
+                                            @case('plastica')
+                                                <img src="{{ asset('img/plastica.jpg') }}" class="img-fluid" />
+                                            @break
+
                                             @case('secco')
-                                                <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                <img src="{{ asset('img/indifferenziata.jpg') }}" class="img-fluid" />
                                             @break
 
                                             @case('tessile')
-                                                <img src="{{ asset('img/') }}" class="img-fluid" />
+                                                <img src="{{ asset('img/ccr.jpg') }}" class="img-fluid" />
                                             @break
 
                                             @case('umido')
