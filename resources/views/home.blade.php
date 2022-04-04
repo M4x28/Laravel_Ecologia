@@ -64,7 +64,7 @@
                                                 <div class="form-outline">
                                                     <input type="text" id="form12" class="form-control form-control-lg"
                                                         name='IndirizzoPaese' />
-                                                    <label class="form-label" for="form12">Indirizzo</label>
+                                                    <label class="form-label" for="form12">{{ __('Address') }}</label>
                                                 </div>
                                                 <!-- Error for the validating -->
                                                 @error('IndirizzoPaese')
@@ -104,13 +104,14 @@
                                     @csrf
 
                                     <div class="row d-flex justify-content-center mt-4">
-                                        <h3 class="mb-5 text-center text-info">Informazioni CCR</h3>
+                                        <h3 class="mb-5 text-center text-info">{{ __('Info CCR') }}</h3>
                                         <div class="col-md-5">
                                             <!-- Name input -->
                                             <div class="form-outline mb-4">
                                                 <input type="text" id="form4Example1" class="form-control form-control-lg"
                                                     name='CCRName' />
-                                                <label class="form-label" for="form4Example1">Nome</label>
+                                                <label class="form-label"
+                                                    for="form4Example1">{{ __('Name') }}</label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -118,30 +119,32 @@
                                             <div class="form-outline mb-4">
                                                 <input type="email" id="form4Example2" class="form-control form-control-lg"
                                                     name='CCREmail' />
-                                                <label class="form-label" for="form4Example2">Email address</label>
+                                                <label class="form-label"
+                                                    for="form4Example2">{{ __('Email Address') }}</label>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
 
                                     <div class="row d-flex justify-content-center mt-2">
-                                        <h3 class="mb-3 text-center text-warning">Georeferenzazione</h3>
+                                        <h3 class="mb-3 text-center text-warning">{{ __('Georeferencing') }}</h3>
                                         <div class="col-md-5 d-flex justify-content-center mb-4">
                                             <div id="map" style='width: 400px; height: 300px; border-radius:15px;'></div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="row m-3">
-                                                <label class="form-label" for="">Adress</label>
+                                                <label class="form-label" for="">{{ __('Address') }}</label>
                                                 <input type="text" id="indirizzoStruttura" class="form-control"
                                                     name='CCRaddress' value='' />
                                             </div>
                                             <div class="row m-3">
-                                                <label class="form-label" for="">Longitudine</label>
+                                                <label class="form-label" for="">{{ __('Lon') }}</label>
                                                 <input type="text" id="lon" class="form-control" name='CCRLon' value=''
                                                     readonly />
                                             </div>
                                             <div class="row m-3">
-                                                <label class="form-label" for="form3Example3">Latitudine</label>
+                                                <label class="form-label"
+                                                    for="form3Example3">{{ __('Lat') }}</label>
                                                 <input type="text" id="lat" class="form-control" name='CCRLat' value=''
                                                     readonly />
                                             </div>
@@ -158,7 +161,7 @@
                                                     id="inputComuniAderenti">
                                                 <datalist id="listaComuniAderenti"></datalist>
                                                 <label class="form-label"
-                                                    for="inputComuniAderenti">{{ __('Comune di appartenenza') }}</label>
+                                                    for="inputComuniAderenti">{{ __('Municipality of belonging') }}</label>
                                             </div>
                                             <!-- Error for the validating -->
                                             @error('ComuneAderenteSelezionato')
@@ -169,58 +172,58 @@
 
                                     <hr>
                                     <div class="row">
-                                        <h3 class="mb-3 text-center text-secondary">Orari</h3>
+                                        <h3 class="mb-3 text-center text-secondary">{{ __('Timetables') }}</h3>
                                         <!-- Lunedì -->
                                         <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Lunedì-Venerdì</div>
+                                            <div class="col-md-2 text-center">{{ __('Monday-Friday') }}</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form12" class="form-control"
                                                         name='AperturaSett' />
-                                                    <label class="form-label" for="form12">Apertura</label>
+                                                    <label class="form-label" for="form12">{{ __('Opening') }}</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form13" class="form-control"
                                                         name='ChiusuraSett' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
+                                                    <label class="form-label" for="form13">{{ __('Closing') }}</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Sabato -->
                                         <div class="row d-flex justify-content-center m-2">
-                                            <div class="col-md-2 text-center">Sabato</div>
+                                            <div class="col-md-2 text-center">{{ __('Saturday') }}</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form12" class="form-control"
                                                         name='AperturaSab' />
-                                                    <label class="form-label" for="form12">Apertura</label>
+                                                    <label class="form-label" for="form12">{{ __('Open') }}</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form13" class="form-control"
                                                         name='ChiusuraSab' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
+                                                    <label class="form-label" for="form13">{{ __('Closing') }}</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Domenica -->
                                         <div class="row d-flex justify-content-center m-2 mb-4">
-                                            <div class="col-md-2 text-center">Domenica</div>
+                                            <div class="col-md-2 text-center">{{ __('Sunday') }}</div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form12" class="form-control"
                                                         name='AperturaDom' />
-                                                    <label class="form-label" for="form12">Apertura</label>
+                                                    <label class="form-label" for="form12">{{ __('Open') }}</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-outline">
                                                     <input type="time" id="form13" class="form-control"
                                                         name='ChiusuraDom' />
-                                                    <label class="form-label" for="form13">Chiusura</label>
+                                                    <label class="form-label" for="form13">{{ __('Closing') }}</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -243,13 +246,13 @@
                                     @csrf
 
                                     <div class="row d-flex justify-content-center mt-4">
-                                        <h3 class="mb-5 text-center text-info">Informazioni Area</h3>
+                                        <h3 class="mb-5 text-center text-info">{{ __('Info Area') }}</h3>
                                         <div class="col-md-5">
                                             <!-- Name input -->
                                             <div class="form-outline mb-4">
                                                 <input type="text" id="form4Example1" class="form-control form-control-lg"
                                                     name='AreaName' />
-                                                <label class="form-label" for="form4Example1">Nome</label>
+                                                <label class="form-label" for="form4Example1">{{ __('Nome') }}</label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -259,7 +262,7 @@
                                                     id="inputComuniAderenti">
                                                 <datalist id="listaComuniAderenti"></datalist>
                                                 <label class="form-label"
-                                                    for="inputComuniAderenti">{{ __('Comune di appartenenza') }}</label>
+                                                    for="inputComuniAderenti">{{ __('Municipality of belonging') }}</label>
                                             </div>
                                             <!-- Error for the validating -->
                                             @error('ComuneAderenteSelezionato')

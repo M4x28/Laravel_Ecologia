@@ -16,7 +16,7 @@
 
                     <div class="row d-flex justify-content-center m-5 p-5">
                         <div class="col-md-12">
-                            <div class="text-warning display-1"><em>{{ __('Cerca un rifiuto') }}</em></div>
+                            <div class="text-warning display-1"><em>{{ __('Search for waste') }}</em></div>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-end">
