@@ -11,7 +11,8 @@
         <div class="d-flex justify-content-center testoComune">
             <div class="row gx-5">
                 <div class="col-md-4">
-                    <img src="{{ asset($info_comune[0]->logo) }}" alt="logo" height="115">
+                    <img src="{{ asset('../storage/app/public/img_logo_comuni/' . $info_comune[0]->logo) }}" alt="logo"
+                        height="115">
                 </div>
                 <div class="col-lg-8">
                     <div class="row text-black h5">COMUNE DI</div>
@@ -26,9 +27,10 @@
     <div class="container card d-flex justify-content-center bg-light bg-gradient shadow-custom">
         <div class="row">
             <div class="col-md-6">
-                <img class='rounded m-4' src="{{ asset($info_comune[0]->mappa) }}" alt="mappa" height="300">
+                <img class='rounded m-4' src="{{ asset('../storage/app/public/img_comuni/' . $info_comune[0]->mappa) }}"
+                    alt="mappa" height="300">
             </div>
-            <div class="col-md-6 text-center mt-5">
+            <div class="col-md-6 text-center mt-5 mb-4">
                 <h2 class="text-info">Informazioni sul Comune</h2>
                 <h4 class="text-black mt-4">Regione: {{ $info_comune[0]->regione }}</h4>
                 <h4 class="text-black">Provincia: {{ $info_comune[0]->provincia }}</h4>
@@ -71,17 +73,20 @@
         @foreach ($zone as $zona)
             <div class="row">
                 <div class="col-md-6">
-                    <img class='rounded m-4' src="{{ asset($zona->img) }}" alt="zona" height="350" width="520">
+                    <img class='rounded m-4' src="{{ asset('../storage/app/public/img_zone/' . $zona->img) }}" alt="zona"
+                        height="350" width="520">
                 </div>
                 <div class="col-md-6 text-center mt-4">
                     <h4 class="text-primary">Zona: {{ $zone[0]->nome }}</h4>
-                    <img class='rounded m-4 mt-2' src="{{ asset($zona->calendario) }}" alt="calendario" height="310"
-                        width="500">
+                    <img class='rounded m-4 mt-2'
+                        src="{{ asset('../storage/app/public/img_calendari/' . $zona->calendario) }}" alt="calendario"
+                        height="310" width="500">
                 </div>
             </div>
             <div class="d-flex justify-content-center m-3">
-                <a class="btn btn-outline-info btn-rounded btn-lg" href="{{ asset($zona->calendario) }}" role="button"
-                    download="{{ asset($zona->calendario) }}">
+                <a class="btn btn-outline-info btn-rounded btn-lg"
+                    href="{{ asset('../storage/app/public/img_calendari/' . $zona->calendario) }}" role="button"
+                    download="{{ $zona->calendario }}">
                     <i class="fas fa-download fa-lg"></i>
                     <strong>Scarica Calendario</strong>
                 </a>
