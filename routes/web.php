@@ -32,21 +32,7 @@ Route::resource('home', HomeController::class)->middleware('verified');
 
 
 // Lingua
-/*  
-Route::get('lang/{locale}', function ($locale = 'en') {
-    if (isset($locale) && in_array($locale, config('app.available_locales'))) {
-        app()->setLocale($locale);
-    }
-
-    $comuni = Comuni_aderenti::join('COMUNI_UFF', 'COMUNI_ADERENTI.fk_comune', '=', 'COMUNI_UFF.istat')->get(['COMUNI_UFF.comune']);
-    //return view('index')->with('smistamento', null);
-    return View::make('index', [
-        'smistamento' => null,
-        'comuni_aderenti' => $comuni
-    ]);
-});
-*/
-
+//https://5balloons.info/localization-laravel-multi-language-language-switcher/
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => '\App\Http\Controllers\LanguageController@switchLang']);
 
 
