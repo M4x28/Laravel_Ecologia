@@ -103,7 +103,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
@@ -121,26 +121,22 @@
                 <li class="nav-item dropdown" style="list-style-type: none;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-mdb-toggle="dropdown" aria-expanded="false">
-                        @if (Request::is('lang/it'))
-                            <i class="italy flag m-0"></i>
-                        @else
-                            <i class="united kingdom flag m-0"></i>
-                        @endif
+                        <i class="{{ Config::get('languages')[App::getLocale()]['flag-icon'] }} flag"></i>
+                        {{ Config::get('languages')[App::getLocale()]['display'] }}
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="{{ url('/lang/en') }}"><i
-                                    class="united kingdom flag"></i>English
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ url('/lang/it') }}"><i
-                                    class="italy flag"></i>Italiano</a>
-                        </li>
+                        @foreach (Config::get('languages') as $lang => $language)
+                            @if ($lang != App::getLocale())
+                                <hr class="dropdown-divider" />
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}">
+                                        <i class="{{ $language['flag-icon'] }} flag"></i>
+                                        {{ $language['display'] }}
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
                     </ul>
                 </li>
             </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Ajax;
 use App\Models\Comuni_aderenti;
 use App\Http\Controllers\HomeController;
 use App\http\Controllers\ComuneController;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::resource('home', HomeController::class)->middleware('verified');
 
 
 // Lingua
+/*  
 Route::get('lang/{locale}', function ($locale = 'en') {
     if (isset($locale) && in_array($locale, config('app.available_locales'))) {
         app()->setLocale($locale);
@@ -43,6 +45,9 @@ Route::get('lang/{locale}', function ($locale = 'en') {
         'comuni_aderenti' => $comuni
     ]);
 });
+*/
+
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => '\App\Http\Controllers\LanguageController@switchLang']);
 
 
 // ------------------ **** ---------------------
