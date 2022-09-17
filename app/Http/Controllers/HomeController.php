@@ -185,8 +185,6 @@ class HomeController extends Controller
                 $zone->save();
 
                 return redirect()->back()->with('store_feedback', '1');
-
-                break;
         }
     }
 
